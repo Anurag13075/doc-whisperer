@@ -14,7 +14,122 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      doc_generations: {
+        Row: {
+          changed_files: Json | null
+          commit_sha: string | null
+          created_at: string
+          docs_pr_url: string | null
+          error_message: string | null
+          generated_docs: Json | null
+          id: string
+          pr_number: number | null
+          repo_id: string
+          status: Database["public"]["Enums"]["generation_status"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          changed_files?: Json | null
+          commit_sha?: string | null
+          created_at?: string
+          docs_pr_url?: string | null
+          error_message?: string | null
+          generated_docs?: Json | null
+          id?: string
+          pr_number?: number | null
+          repo_id: string
+          status?: Database["public"]["Enums"]["generation_status"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          changed_files?: Json | null
+          commit_sha?: string | null
+          created_at?: string
+          docs_pr_url?: string | null
+          error_message?: string | null
+          generated_docs?: Json | null
+          id?: string
+          pr_number?: number | null
+          repo_id?: string
+          status?: Database["public"]["Enums"]["generation_status"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "doc_generations_repo_id_fkey"
+            columns: ["repo_id"]
+            isOneToOne: false
+            referencedRelation: "repos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          github_token: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          github_token?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          github_token?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      repos: {
+        Row: {
+          created_at: string
+          default_branch: string
+          docs_repo_full_name: string
+          id: string
+          is_active: boolean
+          repo_full_name: string
+          updated_at: string
+          user_id: string
+          webhook_secret: string
+        }
+        Insert: {
+          created_at?: string
+          default_branch?: string
+          docs_repo_full_name: string
+          id?: string
+          is_active?: boolean
+          repo_full_name: string
+          updated_at?: string
+          user_id: string
+          webhook_secret?: string
+        }
+        Update: {
+          created_at?: string
+          default_branch?: string
+          docs_repo_full_name?: string
+          id?: string
+          is_active?: boolean
+          repo_full_name?: string
+          updated_at?: string
+          user_id?: string
+          webhook_secret?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +138,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      generation_status: "pending" | "processing" | "completed" | "failed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +265,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      generation_status: ["pending", "processing", "completed", "failed"],
+    },
   },
 } as const
