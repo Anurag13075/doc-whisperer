@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
+import FaqAndCta from "@/components/FaqAndCta";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,12 +12,9 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Problem />
-      <div id="how">
-        <HowItWorks />
-      </div>
-      <div id="pricing">
-        <Pricing />
-      </div>
+      <div id="how"><HowItWorks /></div>
+      <div id="pricing"><Pricing /></div>
+      <FaqAndCta />
       <Footer />
     </div>
   );
