@@ -1,62 +1,110 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Github, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--border))_1px,transparent_1px),linear-gradient(90deg,hsl(var(--border))_1px,transparent_1px)] bg-[size:60px_60px] opacity-30" />
-      
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-mono mb-8">
-          <Zap className="w-3.5 h-3.5" />
-          Docs that update themselves
+    <section className="relative pt-40 pb-24 px-6">
+      <div className="max-w-5xl mx-auto text-center">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 pill bg-primary text-primary-foreground px-4 py-1.5 text-xs font-medium mb-10 shadow-[var(--glow-primary)]">
+          <Star className="w-3.5 h-3.5 fill-current" />
+          247 Stargazers on GitHub
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-          Your docs are{" "}
-          <span className="text-gradient">always wrong.</span>
+        {/* Headline */}
+        <h1 className="text-[clamp(2.75rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-[-0.04em] text-balance mb-8">
+          Documentation that
           <br />
-          Until now.
+          <span className="inline-flex items-center gap-4 align-middle">
+            <span className="inline-flex items-center px-5 py-1 rounded-2xl bg-foreground text-background font-mono text-[0.78em] tracking-tight">
+              writes
+            </span>
+            itself.
+          </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body leading-relaxed">
-          AI reads your code, tests, and git history to generate and maintain API documentation that's always in sync. 
-          Every PR merge triggers an update. Zero manual effort.
+        {/* Subhead */}
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-balance">
+          AI reads your code, tests, and git history, then opens a PR against your docs repo on every merge. Your API reference is always live.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-20">
           <Link to="/auth">
-            <Button variant="hero" size="lg" className="text-base px-8 py-6">
-              Start for free
-              <ArrowRight className="w-4 h-4 ml-1" />
+            <Button variant="hero" size="lg" className="h-12 px-7 text-[15px]">
+              Open dashboard
+              <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
-          <Button variant="heroOutline" size="lg" className="text-base px-8 py-6">
-            See it in action
+          <Button variant="heroOutline" size="lg" className="h-12 px-7 text-[15px]">
+            <Github className="w-4 h-4" />
+            Star on GitHub
           </Button>
         </div>
 
-        {/* Terminal preview */}
-        <div className="mt-16 max-w-2xl mx-auto">
-          <div className="code-block text-left border-glow">
-            <div className="flex gap-1.5 mb-4">
-              <div className="w-3 h-3 rounded-full bg-destructive/60" />
-              <div className="w-3 h-3 rounded-full bg-accent/60" />
-              <div className="w-3 h-3 rounded-full bg-primary/60" />
+        {/* Product preview card */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="card-soft rounded-3xl overflow-hidden text-left">
+            {/* Top bar */}
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-border">
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-foreground flex items-center justify-center">
+                  <span className="font-mono font-bold text-background text-[10px]">{"</>"}</span>
+                </div>
+                <span className="font-mono font-bold tracking-[0.18em] text-xs">AUTODOCS</span>
+                <span className="ml-2 text-[10px] font-mono px-2 py-0.5 rounded-full border border-primary/40 text-primary">DASHBOARD</span>
+              </div>
+              <span className="text-[10px] font-mono tracking-[0.18em] text-muted-foreground">LIVE</span>
             </div>
-            <code className="text-muted-foreground font-mono text-sm leading-relaxed">
-              <span className="text-primary">$</span> git merge feature/auth-v2<br />
-              <span className="text-muted-foreground/60">→ autodocs scanning 12 changed files...</span><br />
-              <span className="text-muted-foreground/60">→ updating auth.md, middleware.md</span><br />
-              <span className="text-primary">✓</span> <span className="text-foreground">PR #247 opened against docs repo</span><br />
-              <span className="text-muted-foreground/60">  2 sections updated, 0 conflicts</span>
-            </code>
+
+            {/* Body */}
+            <div className="grid md:grid-cols-[280px_1fr] gap-0">
+              {/* Left rail */}
+              <div className="p-5 border-r border-border space-y-4 bg-secondary/40">
+                <div>
+                  <p className="text-[11px] font-mono tracking-wider text-muted-foreground mb-2">REPO</p>
+                  <div className="rounded-xl border border-border bg-card px-3 py-2.5 text-sm font-mono">
+                    acme/api-server
+                  </div>
+                </div>
+                <div>
+                  <p className="text-[11px] font-mono tracking-wider text-muted-foreground mb-2">DOCS REPO</p>
+                  <div className="rounded-xl border border-border bg-card px-3 py-2.5 text-sm font-mono">
+                    acme/docs
+                  </div>
+                </div>
+                <button className="w-full pill bg-primary text-primary-foreground py-2.5 text-sm font-medium shadow-[var(--glow-primary)]">
+                  Generate docs
+                </button>
+              </div>
+
+              {/* Right preview */}
+              <div className="p-5">
+                <div className="flex items-center gap-1.5 mb-4">
+                  <span className="w-2.5 h-2.5 rounded-full bg-destructive/60" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-primary/70" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
+                  <span className="ml-auto text-[10px] font-mono tracking-wider text-muted-foreground">PR #247</span>
+                </div>
+                <div className="font-mono text-xs leading-relaxed space-y-1">
+                  <div className="text-muted-foreground">$ git merge feature/auth-v2</div>
+                  <div className="text-muted-foreground">→ scanning 12 changed files…</div>
+                  <div className="text-muted-foreground">→ updating auth.md, middleware.md</div>
+                  <div className="text-primary">✓ PR opened against acme/docs</div>
+                  <div className="pl-3 text-muted-foreground">2 sections updated · 0 conflicts</div>
+                  <div className="mt-3 px-3 py-2 rounded-lg bg-muted text-foreground border border-border">
+                    <span className="text-primary">+</span> ## POST /auth/refresh
+                    <br />
+                    <span className="text-primary">+</span> Returns a new JWT given a valid refresh token.
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <p className="mt-4 text-xs font-mono tracking-wider text-muted-foreground text-center">
+            FRAME 086 / 125 · LIVE PREVIEW
+          </p>
         </div>
       </div>
     </section>
