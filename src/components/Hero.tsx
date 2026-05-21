@@ -230,7 +230,7 @@ const Hero = () => {
             style={{ textDecoration: "none" }}
           >
             <Star className="w-3.5 h-3.5 fill-current" />
-            247 Stargazers on GitHub
+               give it a star ⭐
             <ArrowRight className="w-3 h-3 opacity-70" />
           </a>
         </div>
