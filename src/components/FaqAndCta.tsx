@@ -22,7 +22,7 @@ const faqs = [
     a: "Anything with readable source. We work best on TypeScript, JavaScript, Python, Go, and Rust today, with strong support for REST and GraphQL endpoints.",
   },
   {
-    q: "Do you store my source code?",
+    q: "Do you store my source code here ?",
     a: "No. We pull diffs at request time, hand them to the model, write the result to your docs PR, and discard the working copy.",
   },
   {
