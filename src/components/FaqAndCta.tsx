@@ -14,7 +14,7 @@ const faqs = [
     a: "A small GitHub Action posts a webhook on every merge. We pull the diff via the GitHub API, scope changes to affected modules, and only regenerate doc sections that touch the diff.",
   },
   {
-    q: "Where do the generated docs live?",
+    q: "Where do the generated docs live in repo?",
     a: "AutoDocs opens a pull request in a separate docs repo of your choosing. Nothing is published without a human review and merge.",
   },
   {
