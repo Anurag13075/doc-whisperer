@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Can I customise the writing style?",
-    a: "Yes. Provide example pages, a style guide, or a tone prompt and AutoDocs will match it across every generation.",
+    a: "Yes. Provide example pages, a style guide, or a tone  of prompt and AutoDocs will match it across every generation.",
   },
 ];
 
