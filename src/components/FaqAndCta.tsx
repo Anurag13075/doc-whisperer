@@ -35,7 +35,7 @@ const FaqAndCta = () => {
   return (
     <>
       <section id="faq" className="py-24 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto my-2">
           <div className="text-center mb-12">
             <p className="text-xs font-mono tracking-[0.2em] text-muted-foreground mb-4">FAQ</p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.04em] text-balance leading-[1]">
