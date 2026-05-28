@@ -60,7 +60,7 @@ const FaqAndCta = () => {
         </div>
       </section>
 
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 py-2">
         <div className="max-w-5xl mx-auto card-soft rounded-[2rem] p-12 md:p-20 text-center relative overflow-hidden">
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl" />
           <div className="relative">
