@@ -83,7 +83,7 @@ const FaqAndCta = () => {
               <Button variant="heroOutline" size="lg" className="h-12 px-7 text-[15px]">
                 <Github className="w-4 h-4" />
                 Star on GitHub
-              </Button>
+               </Button>
             </div>
           </div>
         </div>
