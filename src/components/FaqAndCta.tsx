@@ -46,7 +46,7 @@ const FaqAndCta = () => {
           <div className="card-soft rounded-3xl p-2">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((f, i) => (
-                <AccordionItem key={i} value={`item-${i}`} className="border-border last:border-b-0 px-5">
+                <AccordionItem key={i} value={`item-${i}`} className="border-border last:border-b-0 px-5 py-2 ">
                   <AccordionTrigger className="text-left text-base font-medium hover:no-underline py-5">
                     {f.q}
                   </AccordionTrigger>
