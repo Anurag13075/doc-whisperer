@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    q: "How does AutoDocs know what changed?",
+    q: "How does AutoDocs know what has changed?",
     a: "A small GitHub Action posts a webhook on every merge. We pull the diff via the GitHub API, scope changes to affected modules, and only regenerate doc sections that touch the diff.",
   },
   {
