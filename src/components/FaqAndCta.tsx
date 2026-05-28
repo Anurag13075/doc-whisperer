@@ -18,7 +18,7 @@ const faqs = [
     a: "AutoDocs opens a pull request in a separate docs repo of your choosing. Nothing is published without a human review and merge.",
   },
   {
-    q: "Which languages and frameworks are supported?",
+    q: "Which languages and frameworks are supported in autodocs ?",
     a: "Anything with readable source. We work best on TypeScript, JavaScript, Python, Go, and Rust today, with strong support for REST and GraphQL endpoints.",
   },
   {
